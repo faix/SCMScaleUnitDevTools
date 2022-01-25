@@ -9,9 +9,7 @@ trigger:
 pool: $(PoolName)
 
 variables:
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-   #- template: steps/Variables-template.yml   #template for Variables
+  - template: steps/Variables-template.yml   #template for Variables
 
 
 stages:
@@ -99,10 +97,10 @@ stages:
         - template: steps/Roslyn-Template.yml
 
         - task: PublishBuildArtifacts@1
-          displayName: Publish Artifact:NugetPackages
+          displayName: Publish Artifact
           inputs:
-            PathtoPublish: $(build.artifactstagingdirectory)\NugetPackages
-            ArtifactName: NugetPackages
+            PathtoPublish: $(build.artifactstagingdirectory)
+            ArtifactName: Build
 
         - task: PublishSecurityAnalysisLogs@3
           inputs:

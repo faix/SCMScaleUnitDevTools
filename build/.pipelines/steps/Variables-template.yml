@@ -3,7 +3,7 @@
 
 variables:      # pipeline-level
 - name: BuildPlatform
-  value: 'x64'
+  value: 'Any CPU'
 - name: BuildConfiguration
   value: 'Release'
 - name: VSBuildVer
